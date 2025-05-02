@@ -56,13 +56,6 @@ h3{
     margin-bottom: 20px;
 }
 
-a{
-    color: white;
-    text-decoration:underline;
-    text-decoration-color: #920fa6;
-    
-}
-
 ul{
     margin-top: 20px;
 }
@@ -121,6 +114,7 @@ li:has(p:hover) p{
 }
 
 body:has(#titleName:hover) #titleName:hover{
+    transition: all 0.5s;
     text-decoration-color: aqua;
 }
 
@@ -138,6 +132,7 @@ body:has(#titleName:active) .logo{
     transform: rotate(45deg);
 }
 
+
 body:has(.logo:active) #titleName:visited,
 body:has(.logo:active) #titleName:link{
     color:aqua;
@@ -151,12 +146,18 @@ body:has(.logo:active) li::before{
     transform: rotate(45deg);
 }
 
+
 li:has(a:active)::before{
     border-radius: 15%;
     background-color: aqua;
 }
 
-
+body:has(.logo:active) ul li a:link,
+body:has(.logo:active) ul li a:visited {
+    text-decoration: underline !important;
+    text-decoration-color: aqua !important;
+    transition: all 0.5s !important;
+}
 
 
 
