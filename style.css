@@ -7,7 +7,7 @@
 body{
     position: relative;
     width: 480px;
-    background-color: #140921;
+    background-color: #200d36;
     color: white;
     font-family: StyleScript;
     font-size: 20px;
@@ -18,15 +18,29 @@ body{
     
 }
 
+
 .logo{
     position: absolute;
-    background-color: #7C4585;
+    background-color: #920fa6;
     width: 50px;
     height: 50px;
     border: none;
+    border-radius: 20%;
     top: 2px;
     left: -70px;
-    transition: all 0.3s;
+    transition: all 0.5s;
+}
+
+.logo:hover{
+    border-radius: 100%;
+    transition: all 0.5s;
+}
+
+.logo:active{
+    background: aqua;
+    border-radius: 10%;
+    transition: all 0.5s;
+    transform: rotate(45deg);
 }
 
 h1{
@@ -34,6 +48,7 @@ h1{
     line-height: 50px;
     margin-bottom: 30px;
 }
+
 
 h3{
     font-size: 30px;
@@ -44,6 +59,106 @@ h3{
 a{
     color: white;
     text-decoration:underline;
+    text-decoration-color: #920fa6;
+    
 }
+
+ul{
+    margin-top: 20px;
+}
+
+li{
+    position: relative;
+    margin-bottom: 5px;
+}
+
+li::before{
+    position: absolute;
+    content: "";
+    background-color: #920fa6;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    left: -18px;
+    transition: all 0.5s;
+    border-radius: 15%;
+}
+
+a:link,a:visited{
+    color: white;
+    text-decoration:underline;
+    text-decoration-color: #920fa6;
+}
+
+
+
+
+
+
+li:has(a:hover) a:link,
+li:has(a:hover) a:visited{
+    text-decoration-color: aqua;
+}
+
+li:has(a:hover)::before{
+    border-radius: 100%;
+}
+
+body:has(.logo:hover) #titleName:visited,
+body:has(.logo:hover) #titleName:link{
+    color:#920fa6;
+    transition: all 0.5s;
+}
+
+body:has(.logo:hover) li::before{
+    border-radius: 100%;
+}
+
+li:has(p:hover) p{
+    text-decoration: underline;
+    text-decoration-color: white;
+    
+}
+
+body:has(#titleName:hover) #titleName:hover{
+    text-decoration-color: aqua;
+}
+
+body:has(#titleName:hover) .logo{
+    border-radius: 100%;
+}
+
+
+
+
+body:has(#titleName:active) .logo{
+    background: aqua;
+    border-radius: 10%;
+    transition: all 0.5s;
+    transform: rotate(45deg);
+}
+
+body:has(.logo:active) #titleName:visited,
+body:has(.logo:active) #titleName:link{
+    color:aqua;
+    text-decoration-color: aqua;
+    transition: all 0.5s;
+}
+
+body:has(.logo:active) li::before{
+    background-color:aqua;
+    border-radius: 15%;
+    transform: rotate(45deg);
+}
+
+li:has(a:active)::before{
+    border-radius: 15%;
+    background-color: aqua;
+}
+
+
+
+
+
 
 
